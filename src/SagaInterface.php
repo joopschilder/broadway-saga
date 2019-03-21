@@ -15,7 +15,7 @@ interface SagaInterface
 {
     /**
      * @param mixed $event
-     *
+     * @param State $state
      * @return State
      */
     public function handle($event, State $state);

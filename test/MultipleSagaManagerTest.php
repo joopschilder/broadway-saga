@@ -26,11 +26,22 @@ use PHPUnit\Framework\TestCase;
 
 class MultipleSagaManagerTest extends TestCase
 {
+    /** @var MultipleSagaManager */
     private $manager;
+
+    /** @var TraceableSagaStateRepository */
     private $repository;
+
+    /** @var SagaManagerTestSaga[] */
     private $sagas;
+
+    /** @var StateManager */
     private $stateManager;
+
+    /** @var StaticallyConfiguredSagaMetadataFactory */
     private $metadataFactory;
+
+    /** @var TraceableEventDispatcher */
     private $eventDispatcher;
 
     public function setUp(): void
@@ -247,6 +258,7 @@ class MultipleSagaManagerTest extends TestCase
 
     private function handleEvent($manager, $event)
     {
+        /** @var MultipleSagaManager $manager */
         $manager->handle(DomainMessage::recordNow(1, 0, new Metadata([]), $event));
     }
 }

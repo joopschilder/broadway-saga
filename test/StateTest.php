@@ -15,6 +15,7 @@ use PHPUnit\Framework\TestCase;
 
 class StateTest extends TestCase
 {
+    /** @var State */
     private $state;
 
     public function setUp(): void

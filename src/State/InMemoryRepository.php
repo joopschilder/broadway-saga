@@ -15,6 +15,7 @@ use Broadway\Saga\State;
 
 class InMemoryRepository implements RepositoryInterface
 {
+    /** @var array[] */
     private $states = [];
 
     /**
@@ -30,6 +31,7 @@ class InMemoryRepository implements RepositoryInterface
 
         foreach ($criteria->getComparisons() as $key => $value) {
             $states = array_filter($states, function ($elem) use ($key, $value) {
+                /** @var State $elem */
                 $stateValue = $elem->get($key);
 
                 return is_array($stateValue) ? in_array($value, $stateValue) : $value === $stateValue;

@@ -16,8 +16,14 @@ use PHPUnit\Framework\TestCase;
 
 class SagaMetadataEnricherTest extends TestCase
 {
+    /** @var SagaMetadataEnricher */
     private $sagaMetadataEnricher;
+
+    /** @var Metadata */
     private $metadata;
+
+    /** @var mixed */
+    private $sagaData;
 
     public function setUp(): void
     {

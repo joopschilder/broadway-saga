@@ -12,6 +12,7 @@
 namespace Broadway\Saga\Metadata;
 
 use Broadway\Saga\State\Criteria;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class StaticallyConfiguredSagaMetadataFactoryTest extends TestCase
@@ -25,6 +26,7 @@ class StaticallyConfiguredSagaMetadataFactoryTest extends TestCase
         $metadataFactory = new StaticallyConfiguredSagaMetadataFactory();
         $criteria        = new Criteria(['id' => 'YoLo']);
 
+        /** @var StaticallyConfiguredSagaInterface|MockObject $saga */
         $saga = $this->getMockBuilder('Broadway\Saga\Metadata\StaticallyConfiguredSagaInterface')->getMock();
         $saga->staticExpects($this->any())
             ->method('configuration')

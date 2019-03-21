@@ -16,6 +16,7 @@ use Broadway\Saga\State;
 interface RepositoryInterface
 {
     /**
+     * @param Criteria $criteria
      * @param string $sagaId
      *
      * @return State

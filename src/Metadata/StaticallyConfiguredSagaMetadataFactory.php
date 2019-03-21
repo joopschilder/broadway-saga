@@ -27,7 +27,7 @@ class StaticallyConfiguredSagaMetadataFactory implements MetadataFactoryInterfac
                 sprintf('Provided saga of class %s must implement %s', get_class($saga), $requiredInterface)
             );
         }
-
+        /** @var StaticallyConfiguredSagaInterface $saga */
         $criteria = $saga::configuration();
 
         return new Metadata($criteria);

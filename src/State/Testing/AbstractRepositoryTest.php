@@ -17,6 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractRepositoryTest extends TestCase
 {
+    /** @var State\RepositoryInterface */
     protected $repository;
 
     public function setUp(): void
@@ -24,6 +25,9 @@ abstract class AbstractRepositoryTest extends TestCase
         $this->repository = $this->createRepository();
     }
 
+    /**
+     * @return State\RepositoryInterface
+     */
     abstract protected function createRepository();
 
     /**

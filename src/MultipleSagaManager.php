@@ -25,6 +25,8 @@ class MultipleSagaManager implements SagaManagerInterface
     private $repository;
     private $stateManager;
     private $eventDispatcher;
+    private $sagas;
+    private $metadataFactory;
 
     public function __construct(
         RepositoryInterface $repository,
@@ -41,9 +43,10 @@ class MultipleSagaManager implements SagaManagerInterface
     }
 
     /**
+     * @param DomainMessage $domainMessage
      * Handles the event by delegating it to Saga('s) related to the event.
      */
-    public function handle(DomainMessage $domainMessage)
+    public function handle(DomainMessage $domainMessage): void
     {
         $event = $domainMessage->getPayload();
 

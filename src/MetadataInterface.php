@@ -23,6 +23,7 @@ interface MetadataInterface
     public function handles($event);
 
     /**
+     * @param mixed $event
      * @return Criteria Criteria for the given event
      */
     public function criteria($event);
